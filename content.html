@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Выберите подарок от Сбера и партнеров: кешбэк, скидки и промокоды">
+    <title>Ваши призы от Сбера!</title>
+    <link rel="stylesheet" href="content_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Фиксированная шапка с таймером (показывается при скролле) -->
+    <header class="fixed-header" id="fixedHeader" aria-hidden="true">
+        <div class="fixed-header-content">
+            <div class="fixed-header-timer">
+                <div class="fixed-timer-text">
+                    <span class="fixed-timer-label">Осталось:</span>
+                    <span class="fixed-timer-value" aria-live="polite">05:00</span>
+                </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <div class="top-section">
+            <div class="timer-container">
+                <div class="timer-circle">
+                    <div class="timer-progress-ring">
+                        <svg class="progress-ring" width="190" height="190" aria-hidden="true">
+                            <circle class="progress-ring-background" cx="95" cy="95" r="71" stroke="#E6E6E6" stroke-width="8" fill="transparent"/>
+                            <circle class="progress-ring-circle" cx="95" cy="95" r="71" stroke="url(#gradient)" stroke-width="8" fill="transparent" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#04D903" />
+                                    <stop offset="100%" stop-color="#0FA8E0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="timer-text">
+                        <span class="timer-label">осталось</span>
+                        <span class="timer-value" aria-live="polite">05:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="logo-container">
+                    <img src="imgs/banner-title.png" alt="Хотите подарок?" class="content-logo" loading="lazy" width="393" height="60">
+                </div>
+                <div class="title-container">
+                    <h1 class="main-title">Выберите подарок</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ad-text">Реклама. Рекламодатель АО «ЦПЛ» г. Москва ОГРН 1117746689840, erid XXXXX</div>
+        
+        <main class="cases-container">
+            <div class="blocks-grid">
+                <article class="block-item" data-prize="1">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <img src="imgs/banner-title.png" alt="SberPrime" class="case-logo" loading="lazy" width="239" height="36">
+                            <!-- Десктопная версия текста -->
+                            <div class="case-title-text desktop-text">60 дней подписки Прайм за 1 ₽</div>
+                            <div class="case-description-text desktop-text">Кино, музыка и выгодные предложения на каждый день в одной подписке</div>
+                            <!-- Мобильная версия текста -->
+                            <div class="mobile-title-text">60 дней подписки<br>Прайм за 1 ₽</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/1st.png" alt="SberPrime подписка" class="case-image prime-img" loading="lazy" width="398" height="268">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="1" aria-label="Подробнее о подписке Прайм">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="2">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <img src="imgs/okko.png" alt="Okko" class="case-logo okko-logo" loading="lazy" width="280" height="60">
+                            <!-- Десктопная версия текста -->
+                            <div class="case-title-text desktop-text">60 дней за 1 ₽</div>
+                            <div class="case-description-text desktop-text">Смотрите бесплатно фильмы, сериалы и спорт</div>
+                            <!-- Мобильная версия текста -->
+                            <div class="mobile-title-text">60 дней за 1 ₽<br>с подпиской Прайм</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/okko1.png" alt="Okko - фильмы" class="case-image okko1" loading="lazy" width="143" height="177">
+                            <img src="imgs/okko2.png" alt="Okko - сериалы" class="case-image okko2" loading="lazy" width="198" height="191">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="2" aria-label="Подробнее о Okko">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="3">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <img src="imgs/samokat.png" alt="Самокат" class="case-logo samokat-logo" loading="lazy" width="280" height="60">
+                            <!-- Десктопная версия текста -->
+                            <div class="case-title-text desktop-text">Кешбэк до 30%</div>
+                            <div class="case-description-text desktop-text">Получайте кешбэк бонусами Спасибо с каждой покупки</div>
+                            <!-- Мобильная версия текста -->
+                            <div class="mobile-title-text">Кешбэк до 30%<br>с подпиской Прайм</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/samokat1.png" alt="Сервис Самокат" class="case-image samokat1" loading="lazy" width="230" height="204">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="3" aria-label="Подробнее о Самокат">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="4">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <img src="imgs/sitydrive.png" alt="Ситимобил" class="case-logo sitydrive-logo" loading="lazy" width="280" height="60">
+                            <!-- Десктопная версия текста -->
+                            <div class="case-title-text desktop-text">Кешбэк до 15%</div>
+                            <div class="case-description-text desktop-text">Получайте кешбэк бонусами Спасибо за поездки</div>
+                            <!-- Мобильная версия текста -->
+                            <div class="mobile-title-text">Кешбэк до 15%<br>с подпиской Прайм</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/sitydrive1.png" alt="Ситимобил приложение" class="case-image sitydrive-img" loading="lazy" width="380" height="350">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="4" aria-label="Подробнее о Ситимобил">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="5">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <img src="imgs/afisha.png" alt="Афиша" class="case-logo afisha-logo" loading="lazy" width="280" height="60">
+                            <!-- Десктопная версия текста -->
+                            <div class="case-title-text desktop-text">Кешбэк до 25%</div>
+                            <div class="case-description-text desktop-text">Получайте кешбэк бонусами Спасибо за билеты</div>
+                            <!-- Мобильная версия текста -->
+                            <div class="mobile-title-text">Кешбэк до 25%<br>с подпиской Прайм</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/afisha1.png" alt="Афиша - события" class="case-image afisha1" loading="lazy" width="225" height="213">
+                            <img src="imgs/afisha2.png" alt="Афиша - билеты" class="case-image afisha2" loading="lazy" width="218" height="203">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="5" aria-label="Подробнее о Афиша">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="6">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <div class="case-title-text">+14 000 ₽</div>
+                            <div class="case-description-text">При заказе Молодежной карты</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/sber1.png" alt="Sber карта" class="case-image sber1" loading="lazy" width="225" height="225">
+                            <img src="imgs/sber2.png" alt="Sber приложение" class="case-image sber2" loading="lazy" width="221" height="140">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="6" aria-label="Подробнее о Молодежной карте">Подробнее</button>
+                </article>
+
+                <article class="block-item" data-prize="7">
+                    <div class="block-content">
+                        <div class="left-content">
+                            <div class="case-title-wrapper">
+                                <div class="case-title-text">+700</div>
+                                <img src="imgs/bonus.png" alt="Бонусные баллы" class="bonus-icon" loading="lazy" width="40" height="40">
+                            </div>
+                            <div class="case-description-text">При заказе Детского стикера</div>
+                        </div>
+                        <div class="case-images">
+                            <img src="imgs/sbercat.png" alt="SberCat стикер" class="case-image sbercat" loading="lazy" width="157" height="210">
+                            <img src="imgs/sbercat1.png" alt="SberCat персонаж" class="case-image sbercat1" loading="lazy" width="84" height="75">
+                            <img src="imgs/sbercat2.png" alt="SberCat наклейка" class="case-image sbercat2" loading="lazy" width="91" height="82">
+                        </div>
+                    </div>
+                    <button class="block-btn" data-prize="7" aria-label="Подробнее о детском стикере">Подробнее</button>
+                </article>
+            </div>
+        </main>
+
+        <section class="faq-block" aria-labelledby="faq-title">
+            <div class="faq-header">
+                <h2 class="faq-title" id="faq-title">Вопросы и ответы</h2>
+                <div class="faq-subtitle">Часто задаваемые вопросы</div>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-column">
+                    <article class="faq-item" role="region" aria-labelledby="faq1-question">
+                        <div class="faq-question" id="faq1-question" aria-expanded="false" aria-controls="faq1">
+                            <span>Как оформить подписку?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq1" role="region">
+                            <div class="faq-answer-content">
+                                <p>Для оформления подписки необходимо перейти в раздел "Мои подписки" в мобильном приложении СберБанк Онлайн и выбрать подходящий тариф.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq2-question">
+                        <div class="faq-question" id="faq2-question" aria-expanded="false" aria-controls="faq2">
+                            <span>Как воспользоваться скидками и спецпредложениями по подписке?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq2" role="region">
+                            <div class="faq-answer-content">
+                                <p>Все скидки и спецпредложения автоматически применяются при оплате картой СберБанка или через СберПэй. Для активации некоторых предложений может потребоваться ввод промокода.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq3-question">
+                        <div class="faq-question" id="faq3-question" aria-expanded="false" aria-controls="faq3">
+                            <span>Что такое Сбер ID?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq3" role="region">
+                            <div class="faq-answer-content">
+                                <p>Сбер ID — это единый аккаунт для доступа ко всем сервисам экосистемы Сбера. Он позволяет входить в приложения одним кликом без ввода паролей.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq4-question">
+                        <div class="faq-question" id="faq4-question" aria-expanded="false" aria-controls="faq4">
+                            <span>Где можно потратить бонусы СберСпасибо?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq4" role="region">
+                            <div class="faq-answer-content">
+                                <p>Бонусы можно потратить на скидки при оплате у партнеров, на авиа и ж/д билеты, в онлайн-магазинах, а также перевести в мили или благотворительность.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq5-question">
+                        <div class="faq-question" id="faq5-question" aria-expanded="false" aria-controls="faq5">
+                            <span>Суммируются ли скидки по подписке СберПрайм с другими специальными предложениями?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq5" role="region">
+                            <div class="faq-answer-content">
+                                <p>Скидки по подписке не суммируются с другими акционными предложениями. Применяется максимальная доступная скидка.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq6-question">
+                        <div class="faq-question" id="faq6-question" aria-expanded="false" aria-controls="faq6">
+                            <span>Будет ли подписка автоматически продлеваться?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq6" role="region">
+                            <div class="faq-answer-content">
+                                <p>Да, подписка автоматически продлевается каждый месяц. Вы можете отключить автопродление в любой момент в настройках подписки.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq7-question">
+                        <div class="faq-question" id="faq7-question" aria-expanded="false" aria-controls="faq7">
+                            <span>Как отключить автопродление подписки?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq7" role="region">
+                            <div class="faq-answer-content">
+                                <p>Автопродление можно отключить в разделе "Мои подписки" → "Управление подпиской" → "Автопродление" в приложении СберБанк Онлайн.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="faq-column">
+                    <article class="faq-item" role="region" aria-labelledby="faq8-question">
+                        <div class="faq-question" id="faq8-question" aria-expanded="false" aria-controls="faq8">
+                            <span>Как поменять платёжную карту?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq8" role="region">
+                            <div class="faq-answer-content">
+                                <p>Платежную карту можно изменить в настройках подписки в разделе "Способы оплаты". Новая карта будет использоваться для следующих списаний.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq9-question">
+                        <div class="faq-question" id="faq9-question" aria-expanded="false" aria-controls="faq9">
+                            <span>Действует ли подписка и сервисы подписки на всей территории РФ?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq9" role="region">
+                            <div class="faq-answer-content">
+                                <p>Да, подписка и все сервисы доступны на всей территории Российской Федерации, где есть покрытие интернетом.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq10-question">
+                        <div class="faq-question" id="faq10-question" aria-expanded="false" aria-controls="faq10">
+                            <span>Как узнать, до какого числа оплачена подписка?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq10" role="region">
+                            <div class="faq-answer-content">
+                                <p>Дата окончания подписки отображается в разделе "Мои подписки" рядом с названием активной подписки.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq11-question">
+                        <div class="faq-question" id="faq11-question" aria-expanded="false" aria-controls="faq11">
+                            <span>Куда звонить, если у меня остались вопросы?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq11" role="region">
+                            <div class="faq-answer-content">
+                                <p>По всем вопросам вы можете обратиться в службу поддержки Сбера по телефону 900 (для клиентов Сбера) или через онлайн-чат в приложении.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq12-question">
+                        <div class="faq-question" id="faq12-question" aria-expanded="false" aria-controls="faq12">
+                            <span>За какие траты начисляются бонусы от СберСпасибо в подписке СберПрайм?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq12" role="region">
+                            <div class="faq-answer-content">
+                                <p>Бонусы начисляются за оплату товаров и услуг у партнеров Сбера, а также за покупки в интернет-магазинах с подключенной программой лояльности.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq13-question">
+                        <div class="faq-question" id="faq13-question" aria-expanded="false" aria-controls="faq13">
+                            <span>Какие есть лимиты по начислению бонусов?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq13" role="region">
+                            <div class="faq-answer-content">
+                                <p>Лимиты зависят от типа карты и условий акций. Обычно это до 10-30% от суммы покупки, но не более установленного максимального количества бонусов в месяц.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="faq-item" role="region" aria-labelledby="faq14-question">
+                        <div class="faq-question" id="faq14-question" aria-expanded="false" aria-controls="faq14">
+                            <span>Отличаются ли возможности СберПрайм в составе пакета услуг Домклик Плюс от стандартной подписки?</span>
+                            <button class="faq-toggle toggle-button" aria-label="Раскрыть ответ">+</button>
+                        </div>
+                        <div class="faq-answer" id="faq14" role="region">
+                            <div class="faq-answer-content">
+                                <p>В составе Домклик Плюс предоставляются дополнительные возможности, связанные с недвижимостью и ипотекой, при этом основные функции СберПрайм остаются без изменений.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-block" aria-labelledby="legal-title">
+            <article class="legal-item">
+                <div class="legal-question" id="legal-title" aria-expanded="false" aria-controls="legal-info">
+                    <span>Юридическая информация о СберПрайм</span>
+                    <button class="legal-toggle toggle-button" aria-label="Раскрыть юридическую информацию">+</button>
+                </div>
+                <div class="legal-answer" id="legal-info" role="region">
+                    <div class="legal-content">
+                        <p>ООО «Сберпрайм». Лицензия № 0000000000000 от 00.00.0000. Подписка СберПрайм — это платная ежемесячная подписка, предоставляющая доступ к комплексу услуг, включая СберПрайм, Окко, Ситимобил и другие сервисы. Стоимость подписки — 199 рублей в месяц после завершения пробного периода. Для активации пробного периода требуется привязанная к Сбер ID банковская карта. Автопродление можно отключить в любое время в настройках подписки. Подробная информация об условиях и партнерах доступна на сайте sber.ru/prime. Все цены указаны с учетом НДС.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <footer class="content-footer">
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <p class="footer-phone">+7 (495) 500-55-50</p>
+                    <p class="footer-phone-description">Телефон для заявки на любой территории РФ</p>
+                    
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Оферта</a>
+                        <a href="#" class="footer-link">Правильные условия оферты</a>
+                        <a href="#" class="footer-link">Условия акции СберПрайм+</a>
+                        <a href="#" class="footer-link">Перечень Партнеров и условия Сервисов</a>
+                        <a href="#" class="footer-link">Условия акции ЕАПТЕКА</a>
+                    </div>
+                    
+                    <p class="footer-legal">
+                        Акционерное общество «Центр программ лояльности» (АО «ЦПЛ») ОГРН 
+                        1117746689840, ИНН 7702770003 КПП 773001001, место нахождения: 121170, 
+                        Москва, ул. Поклонная, 3, этаж 3, пом. 120.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <p class="footer-phone">900</p>
+                    <p class="footer-phone-description">Бесплатно с мобильного на территории РФ</p>
+                    
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Политика обработки персональных данных</a>
+                        <a href="#" class="footer-link">Тарифный план СберПрайм</a>
+                        <a href="#" class="footer-link">Тарифный план СберПрайм+</a>
+                        <a href="#" class="footer-link">Тарифный план СберПрайм Старт</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright-single">
+                    © 1997—2025 ПАО СберБанк. Генеральная лицензия на осуществление банковских операций от 11 августа 2015 года. Регистрационный номер — 1481. domclick.ru
+                </p>
+            </div>
+        </footer>
+
+        <!-- Попапы -->
+        <div class="popup-overlay" id="popup-1">
+            <div class="popup-container popup-sberprime">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="1" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/banner-title.png" alt="SberPrime" class="popup-logo" loading="lazy" width="239" height="36">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">60 дней подписки СберПрайм за 1 ₽</h2>
+                        
+                        <p class="popup-description">
+                            Подключите подписку СберПрайм на 60 дней за 1 ₽ и получите доступ ко всем возможностям экосистемы Сбера в одном пакете. Кино, музыка, доставка еды и продуктов, такси, каршеринг и многое другое.
+                        </p>
+                        <p class="popup-description"><strong>Что входит в подписку:</strong></p>
+                        <ul class="popup-list">
+                            <li>СберПрайм — доступ к премиум-возможностям сервисов</li>
+                            <li>Окко — кино, сериалы и спорт без рекламы</li>
+                            <li>Самокат — быстрая доставка продуктов и товаров</li>
+                            <li>Ситимобил — поездки с комфортом</li>
+                            <li>Афиша — билеты на мероприятия</li>
+                        </ul>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                        
+                        <h4 class="popup-service-title">О сервисе</h4>
+                        
+                        <p class="popup-service-description">
+                            СберПрайм — это комплексная подписка, которая объединяет ключевые сервисы экосистемы Сбера. Одним пакетом вы получаете доступ к развлечениям, доставке, транспорту и другим полезным услугам.
+                        </p>
+                        
+                        <div class="popup-footer">
+                            <button class="popup-submit popup-sberprime-btn">Подключить подписку</button>
+                            <label class="popup-checkbox">
+                                <input type="checkbox" required>
+                                <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-2">
+            <div class="popup-container popup-okko">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="2" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/okko_pop.png" alt="Okko" class="popup-logo" loading="lazy" width="90" height="32">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Доступ к кино, сериалам и спортивным трансляциям с Праймом</h2>
+                        
+                        <p class="popup-description">
+                            Подключите подписку СберПрайм на 60 дней за 1 Р и смотрите новинки 
+                            и классику мирового кинематографа, сериалы со всего мира, в том числе 
+                            эксклюзивы собственного производства, топовые спортивные события 
+                            — всё доступно без рекламы в высоком качестве на любом устройстве.
+                        </p>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                        
+                        <h4 class="popup-service-title">О сервисе</h4>
+                        
+                        <p class="popup-service-description">
+                            Okko – это огромная медиатека контента, включая собственного производства. 
+                            Помимо кино и сериалов, там проводятся трансляции мирового спорта и доступны ТВ-каналы.
+                        </p>
+                        
+                        <div class="popup-footer">
+                            <button class="popup-submit popup-okko-btn">Подключить подписку</button>
+                            <label class="popup-checkbox">
+                                <input type="checkbox" required>
+                                <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-3">
+            <div class="popup-container popup-samokat">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="3" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/samokat_pop.png" alt="Самокат" class="popup-logo" loading="lazy" width="217" height="32">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Кешбэк до 30% с Праймом</h2>
+                        
+                        <p class="popup-description">
+                            Подключите подписку СберПрайм на 60 дней за 1 ₽ и получайте кешбэк бонусами Спасибо за каждый заказ. За первый заказ вам вернётся 30% от стоимости. За все последующие — размер зависит от суммы заказа:
+                        </p>
+                        <ul class="popup-list">
+                            <li>от 700 до 899 ₽ — 3%</li>
+                            <li>от 900 до 1 099 ₽ — 5%</li>
+                            <li>от 1 100 до 1 499 ₽ — 7%</li>
+                            <li>от 1 500 ₽ — 9%</li>
+                        </ul>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                        
+                        <h4 class="popup-service-title">О сервисе</h4>
+                        
+                        <p class="popup-service-description">
+                            Самокат — это онлайн-магазин с доставкой от 15 минут. Заказывайте продукты, готовую еду, товары для быта и косметику. В каждом районе есть свой даркстор, поэтому курьеры привозят заказы так быстро.
+                        </p>
+                        
+                        <div class="popup-footer">
+                            <button class="popup-submit popup-samokat-btn">Подключить подписку</button>
+                            
+                            <label class="popup-checkbox">
+                                <input type="checkbox" required>
+                                <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-4">
+            <div class="popup-container popup-sitydrive">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="4" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/sitydrive_pop.png" alt="Ситидрайв" class="popup-logo" loading="lazy" width="210" height="31">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Кешбэк за поездки до 15% с Праймом</h2>
+                        
+                        <p class="popup-description">
+                            Подключите подписку СберПрайм на 60 дней за 1 ₽ и получайте кешбэк бонусами Спасибо за каждую поездку:
+                        </p>
+                        <ul class="popup-list">
+                            <li>7% — за первые три поездки в месяц</li>
+                            <li>15% — за четвёртую и следующие поездки в том же месяце</li>
+                        </ul>
+                        <p class="popup-description"><strong>Как получать бонусы</strong></p>
+                        <ol class="popup-list popup-list--numbered">
+                            <li>Подключите подписку</li>
+                            <li>Подтвердите участие в акции по ссылке, получать бонусы за поездки с 8 октября до 23 ноября 2025 года</li>
+                            <li>Войдите в Ситидрайв по Сбер ID и оплачивайте поездки картой Сбера или по SberPay</li>
+                        </ol>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                        
+                        <h4 class="popup-service-title">О сервисе</h4>
+                        
+                        <p class="popup-service-description">
+                            Ситидрайв — каршеринг в Москве, Санкт-Петербурге, Сочи, Нижнем Новгороде и Екатеринбурге. Более 19 000 авто различных классов, ранняя подача машины, удалённый прогрев и другие преимущества для вашего комфорта.
+                        </p>
+                        
+                        <div class="popup-footer">
+                            <button class="popup-submit popup-sitydrive-btn">Подключить подписку</button>
+                            
+                            <label class="popup-checkbox">
+                                <input type="checkbox" required>
+                                <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-5">
+            <div class="popup-container popup-afisha">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="5" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/afisha_pop.png" alt="Афиша" class="popup-logo" loading="lazy" width="160" height="31">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Кешбэк до 25% бонусами за покупку билетов в Афише</h2>
+                        
+                        <p class="popup-description">
+                            Подключите подпику СберПрайм на 60 дней за 1 ₽ и получайте кешбэк бонусами Спасибо за покупку билетов в Афише: 15% за всё, а за стендап вообще 25%. Можно получить до 1 000 бонусов за каждую покупку.
+                        </p>
+                        <p class="popup-description"><strong>Как купить билеты с выгодой</strong></p>
+                        <ol class="popup-list popup-list--numbered">
+                            <li>Войдите на сайт или в приложение Афиши по Сбер ID</li>
+                            <li>Выберите билеты на любое событие</li>
+                            <li>Оплатите билеты картой Сбера или со SberPay — бонусы поступят на счёт в течение 14 дней после завершения мероприятия</li>
+                        </ol>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                        
+                        <h4 class="popup-service-title">О сервисе</h4>
+                        
+                        <p class="popup-service-description">
+                            Афиша — медийно-сервисная платформа о развлечениях и культурном досуге горожанина в XXI веке. В Афише всегда можно найти актуальную информацию о кино, концертах, спектаклях и выставках, а также купить билеты.
+                        </p>
+                        
+                        <div class="popup-footer">
+                            <button class="popup-submit popup-afisha-btn">Подключить подписку</button>
+                            
+                            <label class="popup-checkbox">
+                                <input type="checkbox" required>
+                                <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-6">
+            <div class="popup-container popup-sbercard">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="6" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/sber_pop.png" alt="СберКарта" class="popup-logo" loading="lazy" width="119" height="31">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Молодёжная СберКарта +14 000₽<br>на счёт</h2>
+                        
+                        <p class="popup-description">
+                            Оформите молодёжную СберКарту и получите акцию Сбера в подарок. Участвуй в розыгрыше и получи до 14 000 рублей на брокерский счет.
+                        </p>
+                        <p class="popup-description"><strong>Молодёжная СберКарта — это:</strong></p>
+                        <ul class="popup-list">
+                            <li>Возможность стать совладельцем Сбера</li>
+                            <li>СберПрайм за 1 ₽ в первый месяц — доступ к сервисам и подпискам</li>
+                            <li>Бесплатное обслуживание — без условий и скрытых платежей</li>
+                            <li>Кешбэк до 15% — выбирайте выгодные категории каждый месяц</li>
+                        </ul>
+                        <p class="popup-description"><strong>Как участвовать в акции:</strong></p>
+                        <ol class="popup-list popup-list--numbered">
+                            <li>Открыть молодёжную СберКарта.</li>
+                            <li>Открыть брокерский счет.</li>
+                            <li>Применить промокод SBER5000 в поле "Промокод" при открытии брокерского счета в приложении СберИнвестиции.</li>
+                            <li>Автоматически стать участником розыгрыша на 50 акций (~14 000 рублей).</li>
+                        </ol>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                    </div>
+                    
+                    <div class="popup-footer">
+                        <button class="popup-submit popup-sbercard-btn">Подключить подписку</button>
+                        
+                        <label class="popup-checkbox">
+                            <input type="checkbox" required>
+                            <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                        </label>
+                        
+                        <div class="popup-bottom-text">
+                            Акция «Поощрения за инвестиции от 1 000 рублей» является рекламным мероприятием, не является публичным конкурсом.
+                            Для участия в розыгрыше 5000 акций необходимо иметь молодежную сберкарту и впервые открыть брокерский счет с применением промокода SBER5000 до 31.12.2025. Максимальное количество акций, которые можно выиграть одному человеку - 50 шт. Денежный эквивалент 1 акции равняется 280 рублям на 09.10, сумма поощрения может меняться в зависимости от изменения стоимости акции Сбербанка на дату выплату поощения. Для получения поощрения в виде 1 акции Сбербанка, необходимо открыть первый брокерский счет, пополнить его на сумму не менее 1000 рублей, приобрести любые акции, ценные бумаги на сумму не менее 1000 руб. и не выводить средства в течение 30 дней.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="popup-7">
+            <div class="popup-container popup-kidssticker">
+                <div class="popup-header">
+                    <button class="popup-close" data-popup="7" aria-label="Закрыть окно">&times;</button>
+                </div>
+                <div class="popup-content">
+                    <div class="popup-logo-container">
+                        <img src="imgs/sber_pop.png" alt="Детский стикер" class="popup-logo" loading="lazy" width="119" height="31">
+                    </div>
+                    
+                    <div class="popup-main-content">
+                        <h2 class="popup-main-title">Детский платежный стикер +700₽<br>на счёт</h2>
+                        
+                        <p class="popup-description">
+                            Оформите детский платёжный стикер и получите полный возврат его стоимости — 700 бонусов Спасибо.
+                        </p>
+                        <p class="popup-description"><strong>Детский платёжный стикер это:</strong></p>
+                        <ul class="popup-list">
+                            <li>0 ₽ за обслуживание и уведомления и кешбэк бонусами до 10%. Вы платите только один раз — за выпуск стикера.</li>
+                            <li>Родительский контроль: просматривайте историю операций и настраивайте лимиты в СберБанк Онлайн.</li>
+                            <li>Приложение СберKids: помогает ребёнку копить деньги и прокачивать финансовые навыки.</li>
+                            <li>Копилка со ставкой 12%: ребенок может открыть её самостоятельно в приложении СберKids и копить на подарок мечты.</li>
+                        </ul>
+                        <p class="popup-description"><strong>Как оформить</strong></p>
+                        <ol class="popup-list popup-list--numbered">
+                            <li>Перейти на посадочную страницу банка</li>
+                            <li>Оформить и получить детский платёжный стикер.</li>
+                            <li>Получить 700 бонусы Спасибо.</li>
+</ol>
+                        
+                        <a href="#" class="popup-rules-link">Правила акции</a>
+                    </div>
+                    
+                    <div class="popup-footer">
+                        <button class="popup-submit popup-kidssticker-btn">Подключить подписку</button>
+                        
+                        <label class="popup-checkbox">
+                            <input type="checkbox" required>
+                            <span>Я принимаю условия Оферты СберПрайм, ознакомлен с Правилами Программы "СберСпасибо" и присоединяюсь к ней, согласен на Обработку персональных данных</span>
+                        </label>
+                        
+                        <div class="popup-bottom-text">
+                            Акция «Оформи первую дебетовую МИР СберКарту с тарифным планом «Детский» в формате стикера и получи Бонусы Спасибо» (далее – «Акция») является маркетинговым мероприятием, не является публичным конкурсом в смысле главы 57 Гражданского кодекса Российской Федерации и не является лотереей в смысле Федерального закона от 11.11.2003 № 138-ФЗ «О лотереях». Акция направлена на увеличение уровня лояльности, стимулирование активности в осуществлении зачисления денежных средств на счета клиентов Банка. Общий срок проведения Акции (включая срок получения Участником Акции Поощрений) - с «01» ноября 2025 г. по «30» ноября 2025 г. включительно или до момента исчерпания фонда Акции (в зависимости от того, какое событие наступит ранее).Организатор Акции ПАО Сбербанк.
+                            <br><br>
+                            Подробнее об организаторе, правилах Акции, поощрениях и ограничениях на сайте: https://www.sberbank.com/sms/stickerkids
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="content_script.js"></script>
+</body>
+</html>

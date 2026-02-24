@@ -1,0 +1,439 @@
+:root {
+    --angle: 360deg;
+    --primary-gradient: linear-gradient(90deg, #04D903 -0.34%, #05AEEB 100.37%);
+    --button-gradient: linear-gradient(93.28deg, #99D80A 1.08%, #25B920 53.52%, #02ADEE 103.01%);
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --border-radius: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #211f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.banner__container {
+    max-width: 1444px;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 600px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto; /* Добавляем прокрутку если контент не помещается */
+}
+
+.banner__wheel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Меняем с center на flex-start */
+    width: 100%;
+    height: auto; /* Автоматическая высота */
+    min-height: min-content;
+    gap: 20px;
+    margin: auto 0; /* Центрирование по вертикали если есть свободное место */
+}
+
+.banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px; /* Уменьшаем отступ */
+}
+
+.banner__image {
+    max-width: 393px;
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+}
+
+.banner__description {
+    max-width: 1200px;
+    width: 100%;
+    min-height: 124px;
+    font-family: "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 100%;
+    text-align: center;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.wheelFortune {
+    position: relative;
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    margin: 10px 0; /* Добавляем отступы */
+}
+
+.wheel-background,
+.wheel-image,
+.center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+
+.wheel-background {
+    max-width: 530px;
+}
+
+.wheel-image {
+    max-width: 630px;
+    z-index: 2;
+}
+
+.center-image {
+    position: absolute;
+    top: 50%;
+    left: 51.9%;
+    transform: translate(-50%, -50%);
+    width: 112px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 2px;
+    z-index: 998;
+    box-sizing: content-box;
+}
+
+.wheelFortune__center {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    z-index: 999;
+}
+
+@keyframes wheelFortune {
+    to {
+        transform: translate(-50%, -50%) rotate(var(--angle));
+    }
+}
+
+.spinning-text,
+.result-content {
+    margin-top: 20px; /* Уменьшаем отступ */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 100%;
+    text-align: center;
+    color: #333;
+    width: 100%; /* Гарантируем ширину */
+}
+
+.spinning-text.active,
+.result-content.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Увеличиваем gap */
+    padding-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.result-text {
+    margin-bottom: 0;
+    width: 100%;
+    word-wrap: break-word; /* Перенос длинных слов */
+}
+
+.result-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 10px;
+    width: min(292px, 90%);
+    height: 56px;
+    background: var(--button-gradient);
+    border-radius: 8px;
+    border: none;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 590;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 20px;
+    letter-spacing: -0.3%;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 auto; /* Центрирование */
+}
+
+.result-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+}
+
+.result-button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.05s ease;
+}
+
+/* Скрываем скроллбар для Chrome/Safari но оставляем функциональность */
+.banner__container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.banner__container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.banner__container::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+@media (max-width: 1500px) {
+    .banner__container {
+        padding: 30px;
+    }
+    
+    .banner__wheel {
+        gap: 25px;
+    }
+    
+    .wheelFortune {
+        max-width: 500px;
+    }
+    
+    .banner__description {
+        font-size: clamp(28px, 3.5vw, 42px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner__container {
+        padding: 25px;
+        border-radius: 12px;
+    }
+    
+    .banner__wheel {
+        gap: 20px;
+    }
+    
+    .wheelFortune {
+        max-width: 450px;
+    }
+    
+    .banner__description {
+        font-size: clamp(24px, 3vw, 36px);
+        min-height: 100px;
+    }
+    
+    .spinning-text,
+    .result-content {
+        font-size: clamp(20px, 2.5vw, 28px);
+    }
+}
+
+@media (max-width: 900px) {
+    .banner__container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .banner__content {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .wheelFortune {
+        max-width: 400px;
+    }
+    
+    .banner__description {
+        font-size: clamp(20px, 2.5vw, 28px);
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .banner__container {
+        padding: 15px;
+        border-radius: 8px;
+        min-height: 500px;
+    }
+    
+    .banner__wheel {
+        gap: 15px;
+    }
+    
+    .wheelFortune {
+        max-width: 350px;
+    }
+    
+    .banner__image {
+        height: 50px;
+    }
+    
+    .result-button {
+        height: 50px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        padding: 8px;
+    }
+    
+    .banner__container {
+        padding: 10px;
+        min-height: auto;
+        max-width: 100%;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .banner__wheel {
+        gap: 15px;
+        height: auto;
+        justify-content: flex-start;
+    }
+    
+    .banner__content {
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .banner__image {
+        max-width: 157px;
+        width: 157px;
+        height: 24px;
+    }
+    
+    .banner__description {
+        font-size: 20px;
+        line-height: 24px;
+        min-height: auto;
+        max-width: 255px;
+        padding: 0;
+    }
+    
+    .wheelFortune {
+        max-width: 358px;
+        width: 358px;
+        height: 358px;
+        aspect-ratio: 1/1;
+        margin: 5px 0;
+    }
+    
+    .wheel-background {
+        max-width: 300px;
+    }
+    
+    .wheel-image {
+        max-width: 358px;
+    }
+    
+    .center-image {
+        width: 64px;
+        height: 51px;
+    }
+    
+    .wheelFortune__center {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .spinning-text,
+    .result-content {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 10px;
+    }
+    
+    .result-content {
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+    
+    .result-text {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 0 5px;
+    }
+    
+    .result-button {
+        width: 253px;
+        height: 52px;
+        font-size: 24px;
+        padding: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .banner__container {
+        padding: 8px;
+    }
+    
+    .wheelFortune {
+        max-width: 300px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .result-button {
+        width: 220px;
+        height: 48px;
+        font-size: 20px;
+        padding: 12px;
+    }
+    
+    .result-text {
+        font-size: 14px;
+    }
+}

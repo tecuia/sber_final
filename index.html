@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="./imgs/favicon@075x.png" />
+    <link rel="icon" type="image/png" href="./imgs/favicon@075x.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>Wheel of Fortune</title>
+</head>
+<body>
+    <div class="banner__container">
+        <div class="banner__wheel">
+            <div class="banner__content">
+                <img src="imgs/banner-title.png" alt="Хотите подарок?" class="banner__image">
+                <p class="banner__description">
+                    Получите кешбэк, скидки и промокоды<br>от Сбера и партнёров
+                </p>
+            </div>
+            
+            <div class="wheelFortune" id="wheelFortune">
+                <img src="imgs/background-wheel.png" alt="Wheel Background" class="wheel-background">
+                <img src="imgs/wheel-image.png" alt="Wheel" class="wheel-image">
+                <img src="imgs/center-image.png" alt="Center" class="center-image">
+                <div class="wheelFortune__center"></div>
+            </div>
+            
+            <div class="spinning-text" id="spinningText">Вы получаете...</div>
+            
+            <div class="result-content" id="resultContent">
+                <div class="result-text">Ого! Вам достаётся всё и сразу!</div>
+                <button class="result-button" id="resultButton">Получить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="sctipt.js"></script>
+</body>
+</html>
